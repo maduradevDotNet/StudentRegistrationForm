@@ -2,7 +2,8 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  name: AzurePipelines  # Use the name of your self-hosted agent pool  
+
 
 variables:
   buildConfiguration: 'Release'
