@@ -10,8 +10,13 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  buildConfiguration: 'Release'
+  system.debug: true
+
+
 
 steps:
+- script: dotnet restore
+  displayName: 'Restore dependencies'
+
 - script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+  displayName: 'Build the project'
